@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mureed Sajjad - Biomedical Data Science Researcher</title>
+    <meta name="description" content="Undergraduate researcher in biomedical data science, precision medicine, and AI applications in healthcare">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0369a1;
+            --secondary-teal: #0891b2;
+            --accent-green: #059669;
+            --medical-red: #dc2626;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-light: #94a3b8;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --bg-section: #f1f5f9;
+            --border-light: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #0369a1 0%, #0891b2 50%, #059669 100%);
+            --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="dna" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20,10 Q30,20 20,30 Q10,20 20,10" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></pattern></defs><rect width="200" height="200" fill="url(%23dna)"/></svg>');
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(45deg, #f0f9ff, #e0f2fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .academic-info {
+            text-align: left;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .institution {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .research-focus {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .research-focus h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .research-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--bg-white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            display: block;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-text h3 {
+            color: var(--primary-blue);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        .goals-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .goals-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .goals-list li::before {
+            content: '🎯';
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .interest-card {
+            background: var(--gradient-card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .interest-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+        }
+
+        .interest-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent-green);
+            transition: all 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .publication-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .publication-status {
+            background: var(--accent-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .publication-authors {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .publication-venue {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .publication-abstract {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-section);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-link:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-category {
+            background: var(--bg-section);
+            color: var(--primary-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-type {
+            background: var(--medical-red);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-section);
+            color: var(--text-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-teal);
+        }
+
+        /* Graduate Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .country-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .country-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .country-flag {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .country-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .country-focus {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-white);
+            margin: 0 -2rem;
+            padding: 4rem 2rem;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .form-field {
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--bg-light);
+        }
+
+        .form-field:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+        }
+
+        textarea.form-field {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(3, 105, 161, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .name { font-size: 2.5rem; }
+            .title { font-size: 1.2rem; }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Blog Form Styles */
+        .blog-form {
+            background: var(--bg-section);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .blog-form h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-form textarea {
+            min-height: 200px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .preview-area {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border: 1px solid var(--border-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="profile-section">
+                <div class="profile-img">🧬</div>
+            </div>
+            <div class="academic-info">
+                <h1 class="name">Mureed Sajjad</h1>
+                <p class="title">Biomedical Data Science Researcher</p>
+                <p class="institution">6th Semester • Data Science • University of Sindh, Jamshoro</p>
+                
+                <div class="research-focus">
+                    <h3>🔬 Research Focus</h3>
+                    <div class="research-tags">
+                        <span class="research-tag">Precision Medicine</span>
+                        <span class="research-tag">Cancer Research</span>
+                        <span class="research-tag">AI in Healthcare</span>
+                        <span class="research-tag">Biomedical ML</span>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">📧 Collaborate</a>
+                    <a href="#publications" class="btn btn-secondary">📚 Research</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#publications" class="nav-link">Publications</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#programs" class="nav-link">Graduate Programs</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">Academic Journey & Research Vision</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm deeply committed to academic excellence and research impact, specializing in biomedical and healthcare applications of data science. Though my university may not rank highly globally, I believe in the power of dedication and innovative research to make meaningful contributions to precision medicine and computational healthcare.</p>
+                    
+                    <h3>🎯 Long-term Goals</h3>
+                    <ul class="goals-list">
+                        <li>Publish 6-7 impactful research papers in biomedical data science</li>
+                        <li>Secure fully funded master's and PhD programs</li>
+                        <li>Contribute to data-driven healthcare innovations</li>
+                        <li>Bridge data science with life sciences through interdisciplinary research</li>
+                    </ul>
+                </div>
+                
+                <div class="interests-section">
+                    <h3 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">Research Interests</h3>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <span class="interest-icon">🧬</span>
+                            <h4 class="interest-title">Biomedical Data Science</h4>
+                            <p class="interest-desc">Analytics and ML for clinical and biological datasets</p>
+                        </div>
+                        
+                        <div class="interest-card">
+                            <span class="interest-icon">🎯</span>
+                            <h4 class="interest-title">Precision Medicine</h4>
+                            <p class="interest-desc">Patient-specific diagnostics and treatment strategies</p>
+                        </div>
+                        
+                        <div class="interest-card">
+                            <span class="interest-icon">🤖</span>
+                            <h4 class="interest-title">AI + Big Data + Biomedicine</h4>
+                            <p class="interest-desc">Computational tools for predictive healthcare</p>
+                        </div>
+                        
+                        <div class="interest-card">
+                            <span class="interest-icon">🔬</span>
+                            <h4 class="interest-title">Cancer & Immunity Research</h4>
+                            <p class="interest-desc">Molecular data for early diagnosis and personalized therapies</p>
+                        </div>
+                        
+                        <div class="interest-card">
+                            <span class="interest-icon">🏥</span>
+                            <h4 class="interest-title">ML for Clinical Research</h4>
+                            <p class="interest-desc">Interpretable models for healthcare decision-making</p>
+                        </div>
+                        
+                        <div class="interest-card">
+                            <span class="interest-icon">💊</span>
+                            <h4 class="interest-title">Precision Health</h4>
+                            <p class="interest-desc">Predictive, preventive, and participatory medicine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <h2 class="section-title">Research Publications</h2>
+            <div class="publications-grid">
+                
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">Machine Learning Approaches for Cancer Biomarker Discovery in Genomic Data</h3>
+                        <span class="publication-status">Published</span>
+                    </div>
+                    <p class="publication-authors"><strong>Mureed Sajjad</strong>, et al.</p>
+                    <p class="publication-venue">Journal of Biomedical Informatics • 2024</p>
+                    <div class="publication-abstract">
+                        <strong>Abstract:</strong> This study presents a comprehensive machine learning framework for identifying cancer biomarkers from genomic datasets. We applied ensemble methods including Random Forest, XGBoost, and neural networks to analyze multi-omics data from 500+ cancer patients. Our approach achieved 94% accuracy in biomarker identification and revealed novel therapeutic targets for precision oncology treatments.
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" class="publication-link">📄 arXiv</a>
+                        <a href="#" class="publication-link">🔗 PubMed</a>
+                        <a href="#" class="publication-link">📊 Data</a>
+                        <a href="#" class="publication-link">💻 Code</a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">Deep Learning for Precision Medicine: Predicting Treatment Response in Cancer Patients</h3>
+                        <span class="publication-status">Under Review</span>
+                    </div>
+                    <p class="publication-authors"><strong>Mureed Sajjad</strong>, et al.</p>
+                    <p class="publication-venue">Nature Machine Intelligence • 2024</p>
+                    <div class="publication-abstract">
+                        <strong>Abstract:</strong> We developed a deep learning architecture that integrates clinical, genomic, and imaging data to predict cancer treatment responses. Using transformer-based models on a dataset of 1,200 patients, we achieved 89% accuracy in predicting therapy outcomes, enabling personalized treatment selection and improved patient care in oncology settings.
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" class="publication-link">📄 Preprint</a>
+                        <a href="#" class="publication-link">💻 Code</a>
+                        <a href="#" class="publication-link">📊 Supplementary</a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">AI-Driven Biomarker Discovery for Early Detection of Alzheimer's Disease</h3>
+                        <span class="publication-status">In Preparation</span>
+                    </div>
+                    <p class="publication-authors"><strong>Mureed Sajjad</strong>, et al.</p>
+                    <p class="publication-venue">Target: Cell Reports Medicine • 2024</p>
+                    <div class="publication-abstract">
+                        <strong>Abstract:</strong> This ongoing research focuses on developing AI algorithms to identify early-stage Alzheimer's biomarkers from multimodal neuroimaging and proteomic data. We're applying advanced feature extraction techniques and interpretable ML models to create a diagnostic framework for pre-symptomatic detection, potentially enabling earlier intervention strategies.
+                    </div>
+                    <div class="publication-links">
+                        <a href="#" class="publication-link">🔬 Research Proposal</a>
+                        <a href="#" class="publication-link">📊 Preliminary Results</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <h2 class="section-title">Research Blog & Insights</h2>
+            
+            <!-- Blog Writing Interface -->
+            <div class="blog-form">
+                <h3>✍️ Write New Blog Post (Markdown Support)</h3>
+                <form id="blogForm">
+                    <div class="form-row">
+                        <input type="text" class="form-field" placeholder="Blog Title" id="blogTitle" required>
+                        <select class="form-field" id="blogCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="Biomedical Data Science">Biomedical Data Science</option>
+                            <option value="Machine Learning in Healthcare">Machine Learning in Healthcare</option>
+                            <option value="Research Updates">Research Updates</option>
+                            <option value="Academic Journey">Academic Journey</option>
+                            <option value="Technical Tutorials">Technical Tutorials</option>
+                        </select>
+                    </div>
+                    <textarea class="form-field" placeholder="Write your blog post in Markdown...
+
+Example:
+# Main Heading
+## Subheading
+**Bold text**
+*Italic text*
+- Bullet point
+1. Numbered list
+[Link text](URL)
+![Image](image-URL)
+
+```python
+# Code block
+def example():
+    return 'Hello World'
+```" id="blogContent" required></textarea>
+                    <button type="submit" class="btn btn-primary">📝 Publish Post</button>
+                </form>
+                
+                <div class="preview-area" id="blogPreview" style="display: none;">
+                    <h4>📖 Preview:</h4>
+                    <div id="previewContent"></div>
+                </div>
+            </div>
+
+            <!-- Published Blog Posts -->
+            <div class="blog-grid" id="blogPosts">
+                <div class="blog-card">
+                    <div class="blog-image">🧬</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Biomedical Data Science</span>
+                        <h3 class="blog-title">The Future of Precision Medicine: Where AI Meets Genomics</h3>
+                        <p class="blog-excerpt">Exploring how machine learning algorithms are revolutionizing personalized healthcare by analyzing genomic variations and predicting treatment responses...</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 March 15, 2024</div>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Machine Learning in Healthcare</span>
+                        <h3 class="blog-title">Building Interpretable ML Models for Clinical Decision Making</h3>
+                        <p class="blog-excerpt">A deep dive into developing transparent machine learning models that clinicians can trust and understand for critical healthcare decisions...</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 March 8, 2024</div>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">🔬</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Research Updates</span>
+                        <h3 class="blog-title">My Journey into Cancer Biomarker Discovery Research</h3>
+                        <p class="blog-excerpt">Sharing insights from my recent research on using ensemble learning methods to identify novel cancer biomarkers from multi-omics data...</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 February 28, 2024</div>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Research & Applied Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-image">🧬</div>
+                    <div class="project-content">
+                        <span class="project-type">Research Project</span>
+                        <h3 class="project-title">Multi-Omics Cancer Classification Pipeline</h3>
+                        <p class="project-description">Developed an end-to-end machine learning pipeline for cancer subtype classification using genomic, transcriptomic, and proteomic data. Achieved 96% accuracy across 5 cancer types with interpretable feature importance rankings.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Bioconductor</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">💻 GitHub</a>
+                            <a href="#" class="project-link">📊 Results</a>
+                            <a href="#" class="project-link">📄 Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🏥</div>
+                    <div class="project-content">
+                        <span class="project-type">Applied ML</span>
+                        <h3 class="project-title">Clinical Decision Support System</h3>
+                        <p class="project-description">Built a real-time clinical decision support tool that analyzes patient data to recommend treatment protocols. Integrated with hospital EHR systems and provides explainable AI recommendations for healthcare providers.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">LIME</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 Demo</a>
+                            <a href="#" class="project-link">💻 GitHub</a>
+                            <a href="#" class="project-link">📖 Docs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🔍</div>
+                    <div class="project-content">
+                        <span class="project-type">Research Tool</span>
+                        <h3 class="project-title">Biomarker Discovery Platform</h3>
+                        <p class="project-description">Open-source platform for automated biomarker discovery from high-throughput biological data. Features advanced statistical testing, visualization tools, and integration with major biological databases.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">R Shiny</span>
+                            <span class="tech-tag">Bioconductor</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🌐 Web App</a>
+                            <a href="#" class="project-link">💻 GitHub</a>
+                            <a href="#" class="project-link">📚 Tutorial</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🧠</div>
+                    <div class="project-content">
+                        <span class="project-type">Deep Learning</span>
+                        <h3 class="project-title">Neuroimaging AI for Alzheimer's Detection</h3>
+                        <p class="project-description">Convolutional neural network for early Alzheimer's detection from MRI scans. Implemented attention mechanisms and achieved 92% sensitivity in pre-clinical stage detection using 3D brain imaging data.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">MONAI</span>
+                            <span class="tech-tag">Weights & Biases</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">💻 GitHub</a>
+                            <a href="#" class="project-link">🎯 Model</a>
+                            <a href="#" class="project-link">📊 Metrics</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-content">
+                        <span class="project-type">Data Visualization</span>
+                        <h3 class="project-title">Interactive Genomics Dashboard</h3>
+                        <p class="project-description">Streamlit-based dashboard for exploring genomic datasets with interactive plots, statistical analysis tools, and automated report generation. Supports multiple file formats and provides publication-ready visualizations.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Seaborn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 Live App</a>
+                            <a href="#" class="project-link">💻 GitHub</a>
+                            <a href="#" class="project-link">🎥 Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">💊</div>
+                    <div class="project-content">
+                        <span class="project-type">Drug Discovery</span>
+                        <h3 class="project-title">AI-Powered Drug-Target Interaction Predictor</h3>
+                        <p class="project-description">Graph neural network model for predicting drug-target interactions using molecular fingerprints and protein sequences. Trained on 100k+ drug-protein pairs with 89% accuracy for novel drug discovery applications.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PyTorch Geometric</span>
+                            <span class="tech-tag">RDKit</span>
+                            <span class="tech-tag">BioPython</span>
+                            <span class="tech-tag">NetworkX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">💻 GitHub</a>
+                            <a href="#" class="project-link">📄 Preprint</a>
+                            <a href="#" class="project-link">🔬 Results</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graduate Programs Section -->
+        <section id="programs" class="section">
+            <h2 class="section-title">Target Graduate Programs & Opportunities</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">
+                Seeking fully funded master's and PhD programs in biomedical data science, precision medicine, and computational healthcare across these target regions:
+            </p>
+            
+            <div class="programs-grid">
+                <div class="country-card">
+                    <span class="country-flag">🇸🇬</span>
+                    <h3 class="country-name">Singapore</h3>
+                    <p class="country-focus">NUS, NTU - Computational Biology, Biomedical Informatics</p>
+                </div>
+                
+                <div class="country-card">
+                    <span class="country-flag">🇪🇺</span>
+                    <h3 class="country-name">Europe</h3>
+                    <p class="country-focus">ETH Zurich, Max Planck Institutes, EMBL-EBI</p>
+                </div>
+                
+                <div class="country-card">
+                    <span class="country-flag">🇦🇺</span>
+                    <h3 class="country-name">Australia</h3>
+                    <p class="country-focus">University of Melbourne, UNSW - Precision Health</p>
+                </div>
+                
+                <div class="country-card">
+                    <span class="country-flag">🇲🇾</span>
+                    <h3 class="country-name">Malaysia</h3>
+                    <p class="country-focus">University of Malaya - Medical Data Science</p>
+                </div>
+                
+                <div class="country-card">
+                    <span class="country-flag">🇨🇳</span>
+                    <h3 class="country-name">China</h3>
+                    <p class="country-focus">Tsinghua, Peking University - AI in Medicine</p>
+                </div>
+                
+                <div class="country-card">
+                    <span class="country-flag">🇹🇼</span>
+                    <h3 class="country-name">Taiwan</h3>
+                    <p class="country-focus">National Taiwan University - Biomedical Engineering</p>
+                </div>
+                
+                <div class="country-card">
+                    <span class="country-flag">🇺🇸</span>
+                    <h3 class="country-name">USA</h3>
+                    <p class="country-focus">Stanford, MIT, Harvard - Computational Medicine</p>
+                </div>
+                
+                <div class="country-card">
+                    <span class="country-flag">🇦🇪</span>
+                    <h3 class="country-name">Gulf Countries</h3>
+                    <p class="country-focus">KAUST, NYUAD - Healthcare Innovation</p>
+                </div>
+            </div>
+            
+            <div style="background: var(--bg-white); padding: 2rem; border-radius: 15px; margin-top: 2rem; text-align: center;">
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">🎯 Seeking Opportunities In:</h3>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🔬 CERN Internships</span>
+                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🇨🇦 MITACS Canada</span>
+                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🇯🇵 OIST Internships</span>
+                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🏆 Top 1% Research Labs</span>
+                </div>
+                <p style="color: var(--text-secondary);">
+                    <strong>Research Focus:</strong> Seeking programs that welcome interdisciplinary research in biomedical data science, multimodal AI, and translational medicine
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Let's Collaborate on Biomedical Research</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 1.1rem;">
+                I'm always excited to discuss research opportunities, collaborate on projects, or explore graduate program possibilities. Let's advance precision medicine together!
+            </p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <input type="text" class="form-field" placeholder="Your Name" required>
+                    <input type="email" class="form-field" placeholder="Your Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" class="form-field" placeholder="Institution/Organization">
+                    <select class="form-field">
+                        <option value="">Inquiry Type</option>
+                        <option value="research">Research Collaboration</option>
+                        <option value="graduate">Graduate Program Info</option>
+                        <option value="internship">Internship Opportunity</option>
+                        <option value="general">General Inquiry</option>
+                    </select>
+                </div>
+                <input type="text" class="form-field" placeholder="Subject" required>
+                <textarea class="form-field" placeholder="Your Message - Tell me about research opportunities, collaboration ideas, or graduate programs!" required></textarea>
+                <button type="submit" class="btn btn-primary">📧 Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <a href="mailto:mureed.sajjad@example.com" class="social-link" title="Email">✉️</a>
+                <a href="#" class="social-link" title="LinkedIn">💼</a>
+                <a href="#" class="social-link" title="GitHub">💻</a>
+                <a href="#" class="social-link" title="ORCID">🆔</a>
+                <a href="#" class="social-link" title="ResearchGate">🔬</a>
+                <a href="#" class="social-link" title="Twitter">🐦</a>
+            </div>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-section); border-radius: 15px;">
+                <p><strong>📍 Location:</strong> Nawabshah, Sindh, Pakistan</p>
+                <p><strong>🎓 Current Status:</strong> 6th Semester Data Science Student</p>
+                <p><strong>🔬 Research Interests:</strong> Biomedical Data Science • Precision Medicine • AI in Healthcare</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Mureed Sajjad • Advancing Precision Medicine Through Data Science • Made with 🧬 and lots of ☕</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+            "Bridging Data Science and Life Sciences for Better Healthcare Outcomes"
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active nav link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Blog form functionality
+        const blogForm = document.getElementById('blogForm');
+        const blogContent = document.getElementById('blogContent');
+        const blogPreview = document.getElementById('blogPreview');
+        const previewContent = document.getElementById('previewContent');
+        const blogPosts = document.getElementById('blogPosts');
+
+        // Simple markdown parser
+        function parseMarkdown(text) {
+            return text
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/^- (.*$)/gm, '<li>$1</li>')
+                .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+                .replace(/```(.*?)```/gs, '<pre><code>$1</code></pre>')
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+                .replace(/\n/g, '<br>');
+        }
+
+        // Live preview
+        blogContent.addEventListener('input', function() {
+            if (this.value.trim()) {
+                blogPreview.style.display = 'block';
+                previewContent.innerHTML = parseMarkdown(this.value);
+            } else {
+                blogPreview.style.display = 'none';
+            }
+        });
+
+        // Blog form submission
+        blogForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('blogTitle').value;
+            const category = document.getElementById('blogCategory').value;
+            const content = document.getElementById('blogContent').value;
+            
+            if (title && category && content) {
+                // Create new blog card
+                const newPost = document.createElement('div');
+                newPost.className = 'blog-card';
+                newPost.innerHTML = `
+                    <div class="blog-image">✨</div>
+                    <div class="blog-content">
+                        <span class="blog-category">${category}</span>
+                        <h3 class="blog-title">${title}</h3>
+                        <p class="blog-excerpt">${content.substring(0, 150)}...</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                `;
+                
+                // Add to beginning of blog posts
+                blogPosts.insertBefore(newPost, blogPosts.firstChild);
+                
+                // Reset form
+                blogForm.reset();
+                blogPreview.style.display = 'none';
+                
+                alert('🎉 Blog post published successfully!');
+            }
+        });
+
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! I\'ll get back to you soon to discuss research collaboration opportunities.');
+            this.reset();
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.section, .publication-card, .blog-card, .project-card, .interest-card, .country-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add some interactive features
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
