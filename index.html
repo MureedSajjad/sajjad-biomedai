@@ -774,28 +774,31 @@
 </head>
 <body>
     <!-- Header -->
+<!-- Header -->
 <header class="header">
-  <div class="header-content">
-    <div class="profile-section">
+  <div class="header-content" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+    
+    <!-- Left: Profile Image + Quote -->
+    <div class="profile-section" style="flex: 1; min-width: 280px; text-align: center;">
       <div class="profile-img">
-        <img src="https://github.com/MureedSajjad/sajjad-biomedai/blob/main/images/mym.jpg?raw=true" alt="Sajjad Mureed" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-
-        <p style="
-          margin-top: 1rem;
-          font-family: 'Georgia', serif;
-          font-size: 1.1rem;
-          font-style: italic;
-          color: #f0f0f0;
-          text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-          text-align: center;
-        ">
-          “I don’t come from prestige—I come from persistence. And that’s what powers my research.”<br>
-          — <strong>Sajjad Mureed</strong>
-        </p>
+        <img src="https://github.com/MureedSajjad/sajjad-biomedai/blob/main/images/mym.jpg?raw=true" alt="Sajjad Mureed" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 1rem;">
       </div>
+      <p style="
+        font-family: 'Georgia', serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        color: #f0f0f0;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        max-width: 300px;
+        margin: 0 auto;
+      ">
+        “I don’t come from prestige—I come from persistence. And that’s what powers my research.”<br>
+        — <strong>Sajjad Mureed</strong>
+      </p>
     </div>
 
-    <div class="academic-info">
+    <!-- Right: Academic Info -->
+    <div class="academic-info" style="flex: 2; min-width: 300px;">
       <h1 class="name">Mureed Sajjad</h1>
       <p class="title">Biomedical Data Science Researcher</p>
       <p class="institution">6th Semester • Data Science • University of Sindh, Jamshoro</p>
@@ -810,11 +813,12 @@
         </div>
       </div>
 
-      <div class="cta-buttons">
+      <div class="cta-buttons" style="margin-top: 1rem;">
         <a href="#contact" class="btn btn-primary">📧 Collaborate</a>
         <a href="#publications" class="btn btn-secondary">📚 Research</a>
       </div>
     </div>
+
   </div>
 </header>
 
