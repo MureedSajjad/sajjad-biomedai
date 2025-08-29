@@ -577,44 +577,7 @@
             color: var(--secondary-teal);
         }
 
-        /* Graduate Programs Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .country-card {
-            background: var(--bg-white);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-
-        .country-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-        }
-
-        .country-flag {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .country-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .country-focus {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
+        
 
         /* Contact Section */
         .contact {
@@ -829,7 +792,6 @@
             <a href="#publications" class="nav-link">Publications</a>
             <a href="#blog" class="nav-link">Blog</a>
             <a href="#projects" class="nav-link">Projects</a>
-            <a href="#programs" class="nav-link">Graduate Programs</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
@@ -1184,78 +1146,7 @@ def example():
                 </div>
             </div>
         </section>
-
-        <!-- Graduate Programs Section -->
-        <section id="programs" class="section">
-            <h2 class="section-title">Target Graduate Programs & Opportunities</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">
-                Seeking fully funded master's and PhD programs in biomedical data science, precision medicine, and computational healthcare across these target regions:
-            </p>
-            
-            <div class="programs-grid">
-                <div class="country-card">
-                    <span class="country-flag">🇸🇬</span>
-                    <h3 class="country-name">Singapore</h3>
-                    <p class="country-focus">NUS, NTU - Computational Biology, Biomedical Informatics</p>
-                </div>
-                
-                <div class="country-card">
-                    <span class="country-flag">🇪🇺</span>
-                    <h3 class="country-name">Europe</h3>
-                    <p class="country-focus">ETH Zurich, Max Planck Institutes, EMBL-EBI</p>
-                </div>
-                
-                <div class="country-card">
-                    <span class="country-flag">🇦🇺</span>
-                    <h3 class="country-name">Australia</h3>
-                    <p class="country-focus">University of Melbourne, UNSW - Precision Health</p>
-                </div>
-                
-                <div class="country-card">
-                    <span class="country-flag">🇲🇾</span>
-                    <h3 class="country-name">Malaysia</h3>
-                    <p class="country-focus">University of Malaya - Medical Data Science</p>
-                </div>
-                
-                <div class="country-card">
-                    <span class="country-flag">🇨🇳</span>
-                    <h3 class="country-name">China</h3>
-                    <p class="country-focus">Tsinghua, Peking University - AI in Medicine</p>
-                </div>
-                
-                <div class="country-card">
-                    <span class="country-flag">🇹🇼</span>
-                    <h3 class="country-name">Taiwan</h3>
-                    <p class="country-focus">National Taiwan University - Biomedical Engineering</p>
-                </div>
-                
-                <div class="country-card">
-                    <span class="country-flag">🇺🇸</span>
-                    <h3 class="country-name">USA</h3>
-                    <p class="country-focus">Stanford, MIT, Harvard - Computational Medicine</p>
-                </div>
-                
-                <div class="country-card">
-                    <span class="country-flag">🇦🇪</span>
-                    <h3 class="country-name">Gulf Countries</h3>
-                    <p class="country-focus">KAUST, NYUAD - Healthcare Innovation</p>
-                </div>
-            </div>
-            
-            <div style="background: var(--bg-white); padding: 2rem; border-radius: 15px; margin-top: 2rem; text-align: center;">
-                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">🎯 Seeking Opportunities In:</h3>
-                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🔬 CERN Internships</span>
-                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🇨🇦 MITACS Canada</span>
-                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🇯🇵 OIST Internships</span>
-                    <span style="background: var(--bg-section); padding: 0.5rem 1rem; border-radius: 20px;">🏆 Top 1% Research Labs</span>
-                </div>
-                <p style="color: var(--text-secondary);">
-                    <strong>Research Focus:</strong> Seeking programs that welcome interdisciplinary research in biomedical data science, multimodal AI in Healthcare, and translational medicine
-                </p>
-            </div>
-        </section>
-    </main>
+        
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
