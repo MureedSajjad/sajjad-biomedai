@@ -245,82 +245,54 @@
         }
 
         /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
+        
+.about {
+  background: #0f172a; /* ETH-style dark navy */
+  color: #f1f5f9;
+  padding: 5rem 2rem;
+  border-top: 1px solid #334155;
+}
 
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #1e293b;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
 
-        .about-text h3 {
-            color: var(--primary-blue);
-            margin: 2rem 0 1rem 0;
-            font-size: 1.4rem;
-        }
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #38bdf8; /* ETH blue accent */
+  text-align: center;
+}
 
-        .goals-list {
-            list-style: none;
-            padding: 0;
-        }
+.about-intro,
+.about-interests {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
 
-        .goals-list li {
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text-secondary);
-        }
+.about-subtitle {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #f1f5f9;
+}
 
-        .goals-list li::before {
-            content: '🎯';
-            position: absolute;
-            left: 0;
-            top: 0.75rem;
-        }
+.about-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
 
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+.about-list li {
+  margin-bottom: 0.8rem;
+}
 
-        .interest-card {
-            background: var(--gradient-card);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-light);
-        }
-
-        .interest-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-
-        .interest-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .interest-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary-blue);
-        }
-
-        .interest-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
 
         /* Publications Section */
         .publications-grid {
@@ -787,65 +759,28 @@
     <!-- Main Content -->
     <main class="main">
         <!-- About Section -->
-        <section id="about" class="section">
-            <h2 class="section-title">Academic Journey & Research Vision</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>My name is Sajjad Mureed, and I’m a data science undergraduate at the University of Sindh, Pakistan. My research interests lie at the intersection of biomedical AI, multimodal learning, and precision medicine. I’m currently focused on developing interpretable machine learning models for early disease detection and treatment prediction.
+        
+<section id="about" class="section about">
+  <div class="about-content">
+    <h2 class="section-title">🎓 Academic Journey & Research Vision</h2>
 
-Despite limited institutional resources, I’ve built my foundation through self-driven learning, hands-on experimentation with PyTorch, and active contributions to research in cancer genomics and neurodegenerative disorders. I aim to pursue graduate studies abroad and contribute to data-driven healthcare innovations that bridge computational science with clinical impact.</p>
-                    
-                    <h3>🥇Long-term Goals</h3>
-                    <ul class="goals-list">
-                        <li>Publish 6–7 high-impact research papers in biomedical data science, with a focus on multimodal learning, interpretable AI, and clinical applications in neurology and oncology.</li>
-                        <li>Advanced Studies at leading institutions such as ETH Zürich, Max Planck Institute, or Vienna BioCenter, contributing to cutting-edge research in AI for healthcare.</li>
-                        <li>Advance data-driven innovation in medicine, developing intelligent systems for early diagnosis, treatment prediction, and biomarker discovery.</li>
-                        <li>Bridge data science with life sciences through interdisciplinary collaboration, empowering clinicians and researchers with transparent, scalable AI tools.</li>
-                    </ul>
-                </div>
-                
-                <div class="interests-section">
-                    <h3 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">Research Interests</h3>
-                    <div class="interests-grid">
-                        <div class="interest-card">
-                            <span class="interest-icon">🐼🐻‍❄️</span>
-                            <h4 class="interest-title">Multimodal AI </h4>
-                            <p class="interest-desc">Analytics and ML for clinical and biological datasets</p>
-                        </div>
-                        
-                        <div class="interest-card">
-                            <span class="interest-icon">🫀🧠</span>
-                            <h4 class="interest-title">Precision Medicine</h4>
-                            <p class="interest-desc">Patient-specific diagnostics and treatment strategies</p>
-                        </div>
-                        
-                        <div class="interest-card">
-                            <span class="interest-icon">👨‍⚕️👩‍⚕️</span>
-                            <h4 class="interest-title">AI & Big Data For Biomedicine</h4>
-                            <p class="interest-desc">Computational tools for predictive healthcare</p>
-                        </div>
-                        
-                        <div class="interest-card">
-                            <span class="interest-icon">🔬👩‍⚕️👩‍⚕️</span>
-                            <h4 class="interest-title">Cancer & Immunity Research</h4>
-                            <p class="interest-desc">Molecular data for early diagnosis and personalized therapies</p>
-                        </div>
-                        
-                        <div class="interest-card">
-                            <span class="interest-icon">🏥🧠</span>
-                            <h4 class="interest-title">ML for Clinical Research</h4>
-                            <p class="interest-desc">Interpretable models for healthcare decision-making</p>
-                        </div>
-                        
-                        <div class="interest-card">
-                            <span class="interest-icon">💊💊💊</span>
-                            <h4 class="interest-title">Precision Health</h4>
-                            <p class="interest-desc">Predictive, preventive, and participatory medicine</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <p class="about-intro">
+      I’m <strong>Sajjad Mureed</strong>, a 6th-semester Data Science undergraduate at the University of Sindh, Pakistan. My focus lies in developing machine learning methods for multi-disease detection and early prediction in medicine. Through self-driven learning and hands-on experimentation with Python and PyTorch, I aim to contribute to biomedical AI with clinical impact.
+    </p>
+
+    <h3 class="about-subtitle">🎯 Long-Term Goals</h3>
+    <ul class="about-list">
+      <li>Publish 6+ high-impact research papers in biomedical data science and AI for medicine</li>
+      <li>Secure admission to top-ranked graduate programs at MIT, Stanford, Max Planck Institute, or Vienna BioCenter</li>
+      <li>Bridge data science with life sciences through interdisciplinary collaboration for early diagnosis and personalized treatment</li>
+    </ul>
+
+    <h3 class="about-subtitle">🔬 Research Interests</h3>
+    <p class="about-interests">
+      My interests span <strong>Multimodal AI</strong>, <strong>Precision Medicine</strong>, <strong>AI & Big Data for Biomedicine</strong>, <strong>Cancer & Immunity Research</strong>, <strong>ML for Clinical Research</strong>, and <strong>Precision Health</strong>. I’m passionate about building interpretable, scalable AI systems that empower clinicians and researchers.
+    </p>
+  </div>
+</section>
 
         <!-- Publications Section -->
         <section id="publications" class="section">
