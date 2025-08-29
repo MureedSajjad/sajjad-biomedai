@@ -581,55 +581,38 @@
 
         /* Contact Section */
 .contact {
-  background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+  background: #f5f9fc;
   padding: 5rem 2rem;
-  border-top: 1px solid #ccc;
-  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05);
+  border-top: 1px solid #ddd;
 }
 
 .contact-content {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  text-align: center;
-  padding: 2rem;
   background: white;
+  padding: 3rem;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
 }
 
-.contact-form {
-  display: grid;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.form-field {
-  padding: 1rem 1.5rem;
-  border: 2px solid #d0d0d0;
-  border-radius: 10px;
-  font-family: 'Segoe UI', sans-serif;
+.contact-details p {
   font-size: 1rem;
-  background: #f9f9f9;
-  transition: all 0.3s ease;
+  margin-bottom: 0.8rem;
+  color: #333;
 }
 
-.form-field:focus {
-  outline: none;
-  border-color: #4caf50;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+.contact-details a {
+  color: #0077cc;
+  text-decoration: none;
 }
 
-textarea.form-field {
-  min-height: 140px;
-  resize: vertical;
+.contact-details a:hover {
+  text-decoration: underline;
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
+.social-links h3 {
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .social-link {
@@ -650,6 +633,7 @@ textarea.form-field {
   transform: scale(1.1);
   box-shadow: 0 6px 18px rgba(76, 175, 80, 0.3);
 }
+
 
 
         /* Footer */
@@ -1148,36 +1132,35 @@ def example():
         </section>
         
 
-    <!-- Contact Section -->
-    <!-- Contact Section -->
-<section id="contact" class="section" style="background: var(--bg-section); padding: 4rem 2rem;">
-  <div class="contact-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-    <h2 class="section-title">📬 Get in Touch</h2>
+    <!-- Contact & Connect Section -->
+<section id="contact" class="section contact">
+  <div class="contact-content">
+    <h2 class="section-title">📬 Contact & Connect</h2>
     <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-      I welcome inquiries related to research collaboration, internships, or academic mentorship in biomedical data science, AI in healthcare, and precision medicine.
+      I welcome collaboration, mentorship, and research inquiries in biomedical data science, AI in healthcare, and precision medicine.
     </p>
 
-    <form class="contact-form" id="contactForm" style="display: grid; gap: 1.5rem;">
-      <input type="text" class="form-field" placeholder="Your Name" required>
-      <input type="email" class="form-field" placeholder="Your Email" required>
-      <textarea class="form-field" placeholder="Your Message (e.g. collaboration idea, research inquiry)" required></textarea>
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
-
-    <div class="social-links" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
-      <a href="mailto:mureedsajjad786@gmail.com" class="social-link" title="Email">📧</a>
-      <a href="https://github.com/MureedSajjad" class="social-link" title="GitHub">🐙</a>
-      <a href="https://www.linkedin.com/in/mureedsajjad" class="social-link" title="LinkedIn">🔗</a>
-      <a href="https://orcid.org/0000-0000-0000-0000" class="social-link" title="ORCID">🧬</a>
+    <div class="contact-details" style="text-align: left; max-width: 600px; margin: 0 auto;">
+      <p><strong>Email:</strong> <a href="mailto:mureedsajjad786@gmail.com">mureedsajjad786@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mureedsajjad" target="_blank">linkedin.com/in/mureedsajjad</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/MureedSajjad" target="_blank">github.com/MureedSajjad</a></p>
+      <p><strong>ORCID:</strong> <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">orcid.org/0000-0000-0000-0000</a></p>
+      <p><strong>Location:</strong> Hyderabad, Sindh, Pakistan</p>
+      <p><strong>Status:</strong> 6th Semester Data Science Undergraduate</p>
     </div>
 
-    <div style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-secondary);">
-      <p><strong>📍 Location:</strong> Hyderabad, Sindh, Pakistan</p>
-      <p><strong>🎓 Status:</strong> 6th Semester Data Science Undergraduate</p>
-      <p><strong>🧠 Focus:</strong> Biomedical AI • Multimodal Learning • Precision Medicine</p>
+    <div class="social-links" style="margin-top: 3rem;">
+      <h3 style="margin-bottom: 1rem;">🌐 Follow Me</h3>
+      <div style="display: flex; justify-content: center; gap: 1rem;">
+        <a href="https://www.linkedin.com/in/mureedsajjad" class="social-link" title="LinkedIn">🔗</a>
+        <a href="https://github.com/MureedSajjad" class="social-link" title="GitHub">🐙</a>
+        <a href="mailto:mureedsajjad786@gmail.com" class="social-link" title="Email">📧</a>
+        <a href="https://orcid.org/0000-0000-0000-0000" class="social-link" title="ORCID">🧬</a>
+      </div>
     </div>
   </div>
 </section>
+
 
 
     <!-- Footer -->
