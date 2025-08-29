@@ -36,140 +36,86 @@
         }
 
         /* Header */
-        .header {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
+        /* Homepage Layout */
+.homepage {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  padding: 4rem 2rem;
+}
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="dna" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20,10 Q30,20 20,30 Q10,20 20,10" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></pattern></defs><rect width="200" height="200" fill="url(%23dna)"/></svg>');
-        }
+.homepage-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
+/* Left Column */
+.profile-left {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
 
-        .profile-section {
-            text-align: center;
-        }
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            background: linear-gradient(45deg, #f0f9ff, #e0f2fe);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--primary-blue);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+.quote {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
 
-        .academic-info {
-            text-align: left;
-        }
+/* Right Column */
+.profile-right {
+  flex: 2;
+  min-width: 300px;
+}
 
-        .name {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+.name {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
 
-        .title {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            font-weight: 500;
-        }
+.title,
+.institution {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
 
-        .institution {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.8;
-        }
+.contact-info p {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: #e2e8f0;
+}
 
-        .research-focus {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-        }
+h3 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #f1f5f9;
+}
 
-        .research-focus h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
+ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
 
-        .research-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
 
-        .research-tag {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-blue);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
 
        /* Navbar */
 .nav {
@@ -715,53 +661,44 @@ body {
 </head>
 <body>
     <!-- Header -->
-<!-- Header -->
-<header class="header">
-  <div class="header-content" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+<!-- Homepage Section -->
+<section class="homepage">
+  <div class="homepage-container">
     
-    <!-- Left: Profile Image + Quote -->
-    <div class="profile-section" style="flex: 1; min-width: 280px; text-align: center;">
-      <div class="profile-img">
-        <img src="https://github.com/MureedSajjad/sajjad-biomedai/blob/main/images/mym.jpg?raw=true" alt="Sajjad Mureed" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 1rem;">
-      </div>
-      <p style="
-        font-family: 'Georgia', serif;
-        font-size: 1.05rem;
-        font-style: italic;
-        color: #f0f0f0;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-        max-width: 300px;
-        margin: 0 auto;
-      ">
-        “I don’t come from prestige—I come from persistence. And that’s what powers my research.”<br>
-        — <strong>Sajjad</strong>
-      </p>
+    <!-- Left: Profile Image -->
+    <div class="profile-left">
+      <img src="images/mym.jpg" alt="Sajjad Mureed" class="profile-img">
+      <p class="quote">“I don’t come from prestige—I come from persistence.”</p>
     </div>
 
-    <!-- Right: Academic Info -->
-    <div class="academic-info" style="flex: 2; min-width: 300px;">
-      <h1 class="name">Mureed Sajjad</h1>
-      <p class="title">Biomedical Data Science Researcher</p>
+    <!-- Right: Bio & Info -->
+    <div class="profile-right">
+      <h1 class="name">Sajjad Mureed</h1>
+      <p class="title">Biomedical Data Science Undergraduate</p>
       <p class="institution">University of Sindh, Jamshoro</p>
 
-      <div class="research-focus">
-        <h3> Research Focus</h3>
-        <div class="research-tags">
-          <span class="research-tag">Precision Medicine</span>
-          <span class="research-tag">Cancer Research</span>
-          <span class="research-tag">AI in Healthcare</span>
-          <span class="research-tag">Biomedical ML</span>
-        </div>
+      <div class="contact-info">
+        <p><strong>Email:</strong> mureedsajjad786@gmail.com</p>
+        <p><strong>GitHub:</strong> github.com/MureedSajjad</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/mureedsajjad</p>
+        <p><strong>ORCID:</strong> orcid.org/0000-0000-0000-0000</p>
       </div>
 
-      <div class="cta-buttons" style="margin-top: 1rem;">
-        <a href="#contact" class="btn btn-primary"> Collaborate</a>
-        <a href="#publications" class="btn btn-secondary"> Research</a>
-      </div>
+      <h3>🔬 Research Interests</h3>
+      <p>
+        Multimodal AI, Precision Medicine, AI for Biomedicine, Cancer & Immunity, ML for Clinical Research, Precision Health.
+      </p>
+
+      <h3>🎯 Long-Term Goals</h3>
+      <ul>
+        <li>Publish 6+ high-impact papers in biomedical AI</li>
+        <li>Secure admission to ETH Zürich, Max Planck, or Vienna BioCenter</li>
+        <li>Build scalable, interpretable AI tools for clinical impact</li>
+      </ul>
     </div>
 
   </div>
-</header>
+</section>
 
     <!-- Navigation -->
 <nav class="nav">
