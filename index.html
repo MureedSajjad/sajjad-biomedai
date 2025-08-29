@@ -1149,49 +1149,36 @@ def example():
         
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-content">
-            <h2 class="section-title">Let's Collaborate on Biomedical Research</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 1.1rem;">
-                I'm always excited to discuss research opportunities, collaborate on projects, or explore graduate program possibilities. Let's advance Biomedicine together!
-            </p>
-            
-            <form class="contact-form" id="contactForm">
-                <div class="form-row">
-                    <input type="text" class="form-field" placeholder="Your Name" required>
-                    <input type="email" class="form-field" placeholder="Your Email" required>
-                </div>
-                <div class="form-row">
-                    <input type="text" class="form-field" placeholder="Institution/Organization">
-                    <select class="form-field">
-                        <option value="">Inquiry Type</option>
-                        <option value="research">Research Collaboration</option>
-                        <option value="graduate">Graduate Program Info</option>
-                        <option value="internship">Internship Opportunity</option>
-                        <option value="general">General Inquiry</option>
-                    </select>
-                </div>
-                <input type="text" class="form-field" placeholder="Subject" required>
-                <textarea class="form-field" placeholder="Your Message - Tell me about research opportunities, collaboration ideas, or graduate programs!" required></textarea>
-                <button type="submit" class="btn btn-primary">📧 Send Message</button>
-            </form>
+    <!-- Contact Section -->
+<section id="contact" class="section" style="background: var(--bg-section); padding: 4rem 2rem;">
+  <div class="contact-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 class="section-title">📬 Get in Touch</h2>
+    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+      I welcome inquiries related to research collaboration, internships, or academic mentorship in biomedical data science, AI in healthcare, and precision medicine.
+    </p>
 
-            <div class="social-links">
-                <a href="mailto:mureedsajjad786@gmail.com" class="social-link" title="Email">✉️</a>
-                <a href="#" class="social-link" title="LinkedIn">💼</a>
-                <a href="#" class="social-link" title="GitHub">💻</a>
-                <a href="#" class="social-link" title="ORCID">🆔</a>
-                <a href="#" class="social-link" title="ResearchGate">🔬</a>
-                <a href="#" class="social-link" title="Twitter">🐦</a>
-            </div>
-            
-            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-section); border-radius: 15px;">
-                <p><strong>📍 Location:</strong> Hyderabad, Sindh, Pakistan</p>
-                <p><strong>🎓 Current Status:</strong> 6th Semester Data Science Scholar</p>
-                <p><strong>🔬 Research Interests:</strong> Biomedical Data Science • Biomedicine • Precision Medicine • Multimodal AI for Healthcare </p>
-            </div>
-        </div>
-    </section>
+    <form class="contact-form" id="contactForm" style="display: grid; gap: 1.5rem;">
+      <input type="text" class="form-field" placeholder="Your Name" required>
+      <input type="email" class="form-field" placeholder="Your Email" required>
+      <textarea class="form-field" placeholder="Your Message (e.g. collaboration idea, research inquiry)" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <div class="social-links" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+      <a href="mailto:mureedsajjad786@gmail.com" class="social-link" title="Email">📧</a>
+      <a href="https://github.com/MureedSajjad" class="social-link" title="GitHub">🐙</a>
+      <a href="https://www.linkedin.com/in/mureedsajjad" class="social-link" title="LinkedIn">🔗</a>
+      <a href="https://orcid.org/0000-0000-0000-0000" class="social-link" title="ORCID">🧬</a>
+    </div>
+
+    <div style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-secondary);">
+      <p><strong>📍 Location:</strong> Hyderabad, Sindh, Pakistan</p>
+      <p><strong>🎓 Status:</strong> 6th Semester Data Science Undergraduate</p>
+      <p><strong>🧠 Focus:</strong> Biomedical AI • Multimodal Learning • Precision Medicine</p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer" style="margin-top: 40px;">
