@@ -3,104 +3,58 @@ export default function Publications() {
     <section>
       <h2 className="text-4xl font-semibold mb-6">Publications</h2>
 
-      <article className="mb-5">
+      <article className="mb-8">
         <h3 className="text-2xl font-bold mb-1">
-          Interpretable AI Models for Cancer Prognosis
+          Machine Learning Framework for Cancer Biomarker Identification from Multi-Omics Data
         </h3>
         <p>
-          <em>Journal of Biomedical Informatics, 2024</em>
+          <em>Journal of Biomedical Informatics &middot; 2024 &middot; Published</em>
         </p>
         <p>
-          Abstract: Recent advancements in artificial intelligence (AI) have paved the way for innovative models in cancer prognosis. This paper proposes interpretable machine learning classifiers that enhance transparency and trustworthiness in clinical settings. By leveraging multi-modal data, including genomics, imaging, and clinical variables, the models offer improved predictive performance while providing explanations comprehensible to oncologists. We evaluate these models on publicly available cancer datasets and demonstrate their ability to outperform traditional statistical methods. Further, case studies illustrate practical applications, highlighting how interpretable outputs can influence treatment decisions and patient outcomes. Ethical considerations, validation strategies, and potential future improvements are discussed to facilitate the integration of AI into routine oncology practice. This work contributes significantly to bridging the gap between AI research and clinical adoption.
+          This research introduces a robust machine learning framework designed to identify cancer biomarkers from large-scale genomic datasets. By analyzing multi-omics data from over 500 cancer patients, we applied a combination of ensemble learning techniques—including Random Forest, XGBoost, and neural networks—to uncover patterns associated with disease progression and treatment response.
+          Our approach achieved a biomarker identification accuracy of 94%, demonstrating strong predictive performance across diverse cancer types. In addition to validating known biomarkers, the model revealed several novel candidates with potential therapeutic relevance, contributing to the advancement of precision oncology.
+          This work highlights the power of machine learning in extracting clinically meaningful insights from complex genomic data and supports the development of targeted cancer therapies based on individual molecular profiles.
         </p>
-        <a
-          href="https://arxiv.org/abs/1234.56789"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          Read full paper on arXiv
-        </a>
+        <div className="mt-2 space-x-4">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">📄 arXiv</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">🔗 PubMed</a>
+        </div>
       </article>
 
-      <article className="mb-5">
+      <article className="mb-8">
         <h3 className="text-2xl font-bold mb-1">
-          Leveraging EHR Data for Precision Treatment
+          Deep Learning for Precision Medicine: Predicting Treatment Response in Cancer Patients
         </h3>
         <p>
-          <em>Nature Medicine, 2023</em>
+          <em>Nature Machine Intelligence &middot; 2024 &middot; Under Review</em>
         </p>
         <p>
-          Abstract: Electronic health records (EHR) harbor vast amounts of clinical data that can revolutionize personalized treatment strategies. In this study, we explore advanced big data analytics and predictive modeling techniques applied to large EHR datasets to optimize therapy selection for cancer patients. The approach integrates patient demographics, medical history, biomarker profiles, and treatment responses to generate individualized recommendations. Our machine learning models demonstrate superior accuracy in predicting patient outcomes compared to conventional methods, enhancing decision-making for oncologists. Additionally, we address challenges in EHR data quality, privacy, and ethical use, proposing frameworks to mitigate biases and ensure equitable healthcare delivery. This work provides a robust foundation for harnessing real-world data towards precision medicine goals.
+          This study presents a deep learning framework designed to predict how cancer patients will respond to specific treatments, with the goal of advancing precision medicine in oncology. By integrating clinical records, genomic profiles, and medical imaging data, we developed a transformer-based architecture capable of learning complex patterns across modalities.
+          The model was trained and validated on a dataset of 1,200 cancer patients, achieving an overall prediction accuracy of 89% for therapy outcomes. These results demonstrate the potential of AI to guide personalized treatment decisions, reduce trial-and-error approaches, and improve patient care.
+          Importantly, the model's design emphasizes interpretability, allowing clinicians to understand which features contribute most to each prediction. This transparency supports clinical trust and opens pathways for integrating AI into real-world oncology workflows.
+          Our work contributes to the growing field of data-driven precision medicine and highlights how multimodal deep learning can play a transformative role in tailoring cancer therapies to individual patients.
         </p>
-        <a
-          href="https://doi.org/10.1038/s41591-023-01234-5"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          Read full article
-        </a>
+        <div className="mt-2">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">📄 Preprint</a>
+        </div>
       </article>
 
-      <article className="mb-5">
+      <article className="mb-8">
         <h3 className="text-2xl font-bold mb-1">
-          Multi-Omics Integration for Cancer Subtype Classification
+          AI-Driven Biomarker Discovery for Early Detection of Alzheimer's Disease
         </h3>
         <p>
-          <em>Bioinformatics, 2024</em>
+          <em>Cell Reports Medicine &middot; 2025 &middot; In Preparation</em>
         </p>
         <p>
-          Abstract: Cancer is a highly heterogeneous disease where precise subtype classification is critical for effective treatment. This paper introduces an integrated machine learning framework that combines genomics, transcriptomics, and proteomics data to classify cancer subtypes with higher accuracy. We utilize novel feature extraction and fusion techniques to capture the complex biological interactions across data types. Our methodology is validated on multiple cancer cohorts and benchmarked against existing classifiers, demonstrating significant improvement in predictive accuracy. Furthermore, the framework includes mechanisms for interpretability to understand the influence of various omics features. The study discusses implications for personalized therapeutics, challenges in multi-omics data integration, and directions for future research. This integrative approach promises enhanced diagnostic and prognostic capabilities in oncology.
+          Alzheimer's disease is notoriously difficult to detect in its earliest stages, when intervention could be most effective. This research aims to develop artificial intelligence (AI) algorithms that can identify early biomarkers of Alzheimer's using multimodal data sources, including neuroimaging and proteomic profiles.
+          We are applying advanced feature extraction techniques and interpretable machine learning models to uncover subtle patterns that may indicate pre-symptomatic neurodegeneration. Our goal is to build a diagnostic framework that can detect Alzheimer's before clinical symptoms appear, potentially enabling earlier and more targeted treatment strategies.
+          Preliminary results show promising accuracy in distinguishing early-stage Alzheimer's from healthy controls, and several features identified by the model align with known biological pathways. By using explainable AI, we ensure that the results are not only accurate but also understandable to clinicians and researchers.
+          This work contributes to the growing field of precision neurology and offers a scalable, data-driven approach to improving early diagnosis and long-term outcomes for individuals at risk of Alzheimer's disease.
         </p>
-        <a
-          href="https://doi.org/10.1093/bioinformatics/btac123"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          Read full article
-        </a>
-      </article>
-
-      <article className="mb-5">
-        <h3 className="text-2xl font-bold mb-1">
-          Machine Learning Approaches for Drug Repurposing in Oncology
-        </h3>
-        <p>
-          <em>Journal of Cancer Research, 2023</em>
-        </p>
-        <p>
-          Abstract: Drug repurposing offers a cost-effective and efficient method for discovering new cancer treatments by identifying novel therapeutic uses for existing drugs. In this study, we apply state-of-the-art machine learning algorithms to chemical compound databases and pharmacogenomic profiles to predict drug efficacy against various cancer types. Our pipeline integrates molecular docking simulations with graph-based neural networks, enabling the identification of promising drug candidates for clinical validation. We present comprehensive evaluations of model performance and highlight case studies where our predictions align with observed clinical effects. The research also discusses the challenges of data heterogeneity, model interpretability, and the translational potential of computational repurposing methodologies. Our findings contribute to accelerating oncological drug discovery through innovative AI-driven approaches.
-        </p>
-        <a
-          href="https://doi.org/10.1158/jcr.2023.4567"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          Read full article
-        </a>
-      </article>
-
-      <article className="mb-5">
-        <h3 className="text-2xl font-bold mb-1">
-          Predictive Biomarkers for Immunotherapy Response
-        </h3>
-        <p>
-          <em>Clinical Cancer Insights, 2024</em>
-        </p>
-        <p>
-          Abstract: Immunotherapy has transformed cancer treatment paradigms, but patient response varies widely. This paper focuses on the identification and validation of predictive biomarkers that can stratify patients likely to benefit from immunotherapeutic interventions. Using high-throughput sequencing, proteomics, and advanced bioinformatics, we analyze tumor microenvironment profiles and immune signatures across diverse cancer types. Our study employs machine learning classifiers to correlate biomarker expression with clinical outcomes, achieving strong predictive power. The findings provide insights into mechanisms of resistance and sensitivity, offering pathways to optimize patient selection and personalize immunotherapy regimens. Considerations on clinical implementation, assay reproducibility, and future research directions are also addressed.
-        </p>
-        <a
-          href="https://doi.org/10.1016/cci.2024.00123"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          Read full article
-        </a>
+        <div className="mt-2">
+          <span className="text-gray-500 italic">📄 BioRxiv (Coming Soon)</span>
+        </div>
       </article>
     </section>
   );
