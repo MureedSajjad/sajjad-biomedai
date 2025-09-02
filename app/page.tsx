@@ -16,7 +16,7 @@ export default function Home() {
         <h1 className="text-5xl font-bold text-blue-400 mb-2 drop-shadow-lg">Mureed Sajjad</h1>
         <p className="text-2xl font-semibold text-blue-200 mb-1 drop-shadow-sm">Data Science Student | Biomedical AI Enthusiast</p>
         <p className="text-lg text-gray-100 max-w-xl mx-auto mb-4">
-          Final-year Data Science student at University of Sindh, Jamshoro, passionate about leveraging Artificial Intelligence and Big Data for transforming Biomedicine and Healthcare.
+          Final-year Data Science student at University of Sindh, Jamshoro, committed to leveraging Artificial Intelligence and Big Data to transform Biomedicine and Healthcare.
         </p>
       </div>
 
