@@ -7,7 +7,7 @@ export default function Home() {
       <div className="text-center mb-10">
         <div className="flex justify-center">
           <img
-            src="/profile.jpg"
+            src="/Profile.png"
             alt="Mureed Sajjad"
             className="w-32 h-32 rounded-full mx-auto shadow-lg mb-4 border-4 border-blue-700 bg-white object-cover"
             style={{ objectPosition: "top" }}
