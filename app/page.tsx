@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -7,10 +7,12 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center md:items-start mb-10 gap-8">
         {/* Profile Image */}
         <div className="flex-shrink-0 flex justify-center md:justify-start">
-          <img
+          <Image
             src="/Profile.png"
             alt="Mureed Sajjad"
-            className="w-32 h-32 rounded-full shadow-lg border-4 border-blue-700 bg-white object-cover"
+            width={128}
+            height={128}
+            className="rounded-full shadow-lg border-4 border-blue-700 bg-white object-cover"
             style={{ objectPosition: "top" }}
           />
         </div>
@@ -21,17 +23,30 @@ export default function Home() {
           {/* Contact Sidebar */}
           <div className="flex flex-col md:flex-row md:items-center gap-4 mb-3 text-sm">
             <div>
-              <span className="font-bold">E-mail:</span> <a href="mailto:2k23-ds-77@usind.edu.pk" className="text-blue-300 hover:underline">2k23-ds-77@usind.edu.pk</a>
+              <span className="font-bold">E-mail:</span>{" "}
+              <a href="mailto:2k23-ds-77@usind.edu.pk" className="text-blue-300 hover:underline">
+                2k23-ds-77@usind.edu.pk
+              </a>
             </div>
             <div>
-              <span className="font-bold">LinkedIn:</span>{' '}
-              <a href="https://linkedin.com/in/mureed-sajjad/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">
+              <span className="font-bold">LinkedIn:</span>{" "}
+              <a
+                href="https://linkedin.com/in/mureed-sajjad/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-300 hover:underline"
+              >
                 /mureed-sajjad
               </a>
             </div>
             <div>
-              <span className="font-bold">GitHub:</span>{' '}
-              <a href="https://github.com/MureedSajjad" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:underline">
+              <span className="font-bold">GitHub:</span>{" "}
+              <a
+                href="https://github.com/MureedSajjad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-300 hover:underline"
+              >
                 /MureedSajjad
               </a>
             </div>
@@ -59,16 +74,15 @@ export default function Home() {
         <p className="font-medium text-gray-100 leading-relaxed mb-2">
           Dedicated to advancing biomedical discovery with data science, AI, and Big Data.
         </p>
-        {/* Compact interests */}
         <ul className="list-disc ml-6 text-base text-gray-100 space-y-1 mb-4">
           <li>Artificial Intelligence for disease prediction and diagnostics</li>
           <li>Multi-omics &amp; biomedical Big Data integration</li>
-          <li>Machine learning model interpretability & transparency</li>
+          <li>Machine learning model interpretability &amp; transparency</li>
           <li>Clinical data mining and EHR analytics</li>
-          <li>Personalized medicine & precision healthcare</li>
+          <li>Personalized medicine &amp; precision healthcare</li>
         </ul>
       </div>
-      
+
       {/* Academic narrative */}
       <div className="mb-8">
         <span className="block text-lg text-blue-300 font-semibold mb-1">Academic Profile</span>
@@ -87,10 +101,10 @@ export default function Home() {
         </ul>
       </div>
 
-      {/* Optional quote box for personal touch */}
+      {/* Quote box */}
       <div className="bg-gray-800 rounded-xl px-6 py-4 my-6 text-center shadow-md max-w-2xl mx-auto">
         <span className="italic text-blue-200 text-lg">
-          "I don't come from prestige—I come from persistence. And that's what powers my research"
+          &quot;I don&apos;t come from prestige—I come from persistence. And that&apos;s what powers my research.&quot;
         </span>
       </div>
     </section>
