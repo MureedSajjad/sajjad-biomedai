@@ -1,112 +1,196 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
+const sections = ["home", "research", "publications", "projects", "contact"];
+
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  // Scrollspy logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      let current = "home";
+      sections.forEach((section) => {
+        const el = document.getElementById(section);
+        if (el && el.offsetTop <= scrollPosition) {
+          current = section;
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // initialize on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Smooth scroll handler
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <section className="max-w-4xl mx-auto py-12 px-4 text-white bg-gray-900">
-      {/* Top layout: image/name/contact sidebar */}
-      <div className="flex flex-col md:flex-row items-center md:items-start mb-10 gap-8">
-        {/* Profile Image */}
-        <div className="flex-shrink-0 flex justify-center md:justify-start">
-          <Image
-            src="/Profile.png"
-            alt="Mureed Sajjad"
-            width={128}
-            height={128}
-            className="rounded-full shadow-lg border-4 border-blue-700 bg-white object-cover"
-            style={{ objectPosition: "top" }}
-          />
-        </div>
-        {/* Name & Contacts */}
-        <div className="flex-1 w-full">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">Mureed Sajjad</h1>
-          <h2 className="text-2xl font-semibold text-blue-200 mb-3">Data Science Student | Biomedical AI Enthusiast</h2>
-          {/* Contact Sidebar */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-3 text-sm">
-            <div>
-              <span className="font-bold">E-mail:</span>{" "}
-              <a href="mailto:2k23-ds-77@usind.edu.pk" className="text-blue-300 hover:underline">
-                2k23-ds-77@usind.edu.pk
-              </a>
-            </div>
-            <div>
-              <span className="font-bold">LinkedIn:</span>{" "}
-              <a
-                href="https://linkedin.com/in/mureed-sajjad/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-300 hover:underline"
-              >
-                /mureed-sajjad
-              </a>
-            </div>
-            <div>
-              <span className="font-bold">GitHub:</span>{" "}
-              <a
-                href="https://github.com/MureedSajjad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-300 hover:underline"
-              >
-                /MureedSajjad
-              </a>
-            </div>
-            <div>
-              <span className="font-bold">University:</span> University of Sindh, Jamshoro
-            </div>
+    <>
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 right-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm shadow-md z-50">
+        <ul className="flex justify-center space-x-10 py-4 font-semibold text-gray-300 select-none">
+          {sections.map((section) => (
+            <li
+              key={section}
+              onClick={() => scrollToSection(section)}
+              className={`cursor-pointer hover:text-blue-400 transition ${
+                activeSection === section ? "text-blue-500 border-b-2 border-blue-500" : ""
+              }`}
+              aria-current={activeSection === section ? "page" : undefined}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Page Content */}
+      <main className="bg-gray-900 text-white pt-24 max-w-6xl mx-auto px-6 sm:px-12">
+        {/* Home Section */}
+        <section id="home" className="flex flex-col md:flex-row items-center gap-8 mb-20">
+          {/* Profile Photo and Quote */}
+          <div className="flex flex-col items-center md:items-start md:w-1/3">
+            <Image
+              src="/Profile.png"
+              alt="Mureed Sajjad"
+              width={190}
+              height={190}
+              className="rounded-full shadow-lg border-4 border-blue-700 bg-white object-cover"
+              style={{ objectPosition: "top" }}
+            />
+            <blockquote className="mt-6 text-center md:text-left font-bold italic text-blue-400 max-w-xs">
+              “I don&apos;t come from prestige—I come from persistence. And that&apos;s what powers my research.”
+            </blockquote>
           </div>
-          {/* CV Button */}
-          <div>
+          {/* Content to the right */}
+          <div className="md:w-2/3 space-y-6">
+            <h1 className="text-5xl font-bold text-blue-400">Mureed Sajjad</h1>
+            <h2 className="text-3xl font-semibold text-blue-300">
+              Data Science Student | Biomedical AI Enthusiast
+            </h2>
+            <div className="flex flex-col sm:flex-row sm:space-x-8 text-gray-300 text-sm sm:text-base">
+              <div>
+                <span className="font-semibold">E-mail: </span>
+                <a
+                  href="mailto:2k23-ds-77@usind.edu.pk"
+                  className="text-blue-400 hover:underline"
+                >
+                  2k23-ds-77@usind.edu.pk
+                </a>
+              </div>
+              <div>
+                <span className="font-semibold">LinkedIn: </span>
+                <a
+                  href="https://linkedin.com/in/mureed-sajjad/"
+                  className="text-blue-400 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  /mureed-sajjad
+                </a>
+              </div>
+              <div>
+                <span className="font-semibold">GitHub: </span>
+                <a
+                  href="https://github.com/MureedSajjad"
+                  className="text-blue-400 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  /MureedSajjad
+                </a>
+              </div>
+              <div>
+                <span className="font-semibold">University: </span>University of Sindh, Jamshoro
+              </div>
+            </div>
             <a
               href="/Mureed_Sajjad_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-500 text-white font-bold rounded shadow-lg hover:bg-blue-700 transition text-base mt-2"
+              className="inline-block mt-4 px-7 py-3 bg-blue-600 hover:bg-blue-800 rounded font-semibold transition"
             >
               Download CV
             </a>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Research summary */}
-      <div className="mb-6">
-        <span className="block text-lg text-blue-200 font-semibold mb-1">Main Research Interests</span>
-        <p className="font-medium text-gray-100 leading-relaxed mb-2">
-          Dedicated to advancing biomedical discovery with data science, AI, and Big Data.
-        </p>
-        <ul className="list-disc ml-6 text-base text-gray-100 space-y-1 mb-4">
-          <li>Artificial Intelligence for disease prediction and diagnostics</li>
-          <li>Multi-omics &amp; biomedical Big Data integration</li>
-          <li>Machine learning model interpretability &amp; transparency</li>
-          <li>Clinical data mining and EHR analytics</li>
-          <li>Personalized medicine &amp; precision healthcare</li>
-        </ul>
-      </div>
+        {/* Research Section */}
+        <section id="research" className="mb-20 scroll-mt-28">
+          <h2 className="text-4xl font-bold text-blue-400 mb-6 border-b border-blue-700 pb-2">Research</h2>
+          <p className="text-gray-300 mb-4 max-w-prose leading-relaxed">
+            Dedicated to advancing biomedical discovery with data science, AI, and Big Data.
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-400 max-w-prose">
+            <li>Artificial Intelligence for disease prediction and diagnostics</li>
+            <li>Multi-omics &amp; biomedical Big Data integration</li>
+            <li>Machine learning model interpretability &amp; transparency</li>
+            <li>Clinical data mining and EHR analytics</li>
+            <li>Personalized medicine &amp; precision healthcare</li>
+          </ul>
+        </section>
 
-      {/* Academic narrative */}
-      <div className="mb-8">
-        <span className="block text-lg text-blue-300 font-semibold mb-1">Academic Profile</span>
-        <p className="text-base text-gray-200 leading-relaxed">
-          Final-year Data Science student at University of Sindh, Jamshoro, committed to leveraging Artificial Intelligence and Big Data to transform Biomedicine and Healthcare. Experienced in developing multimodal models, integrating genomics, clinical, and imaging data for precision medicine. Collaborative, research-driven mindset with publications in leading journals and participation in competitive data challenges.
-        </p>
-      </div>
+        {/* Publications Section */}
+        <section id="publications" className="mb-20 scroll-mt-28">
+          <h2 className="text-4xl font-bold text-blue-400 mb-6 border-b border-blue-700 pb-2">
+            Publications
+          </h2>
+          <p className="text-gray-300 max-w-prose mb-4">
+            [List or summary of publications can be added here.]
+          </p>
+        </section>
 
-      {/* Highlights box */}
-      <div className="mb-8 border-l-4 border-blue-500 pl-4 py-4 bg-blue-900 bg-opacity-70 rounded-lg shadow-inner">
-        <h3 className="text-blue-200 font-semibold mb-2">Highlights:</h3>
-        <ul className="list-disc ml-6 text-gray-100 text-base space-y-1">
-          <li>3+ major research projects in AI &amp; biomedicine</li>
-          <li>Published in leading journals and conferences</li>
-          <li>Finalist, University Data Science Challenge 2024</li>
-        </ul>
-      </div>
+        {/* Projects Section */}
+        <section id="projects" className="mb-20 scroll-mt-28">
+          <h2 className="text-4xl font-bold text-blue-400 mb-6 border-b border-blue-700 pb-2">
+            Projects
+          </h2>
+          <p className="text-gray-300 max-w-prose mb-4">
+            [Descriptions of main research projects, collaborations, or software tools.]
+          </p>
+        </section>
 
-      {/* Quote box */}
-      <div className="bg-gray-800 rounded-xl px-6 py-4 my-6 text-center shadow-md max-w-2xl mx-auto">
-        <span className="italic text-blue-200 text-lg">
-          &quot;I don&apos;t come from prestige—I come from persistence. And that&apos;s what powers my research.&quot;
-        </span>
-      </div>
-    </section>
+        {/* Contact Section */}
+        <section id="contact" className="mb-20 scroll-mt-28">
+          <h2 className="text-4xl font-bold text-blue-400 mb-6 border-b border-blue-700 pb-2">Contact</h2>
+          <p className="text-gray-300 max-w-prose mb-4">
+            Feel free to reach out via email or LinkedIn for collaborations, questions, or research discussions.
+          </p>
+          <div className="space-y-2 text-gray-400 max-w-prose">
+            <div>
+              <span className="font-semibold">E-mail:</span>{" "}
+              <a
+                href="mailto:2k23-ds-77@usind.edu.pk"
+                className="text-blue-400 hover:underline"
+              >
+                2k23-ds-77@usind.edu.pk
+              </a>
+            </div>
+            <div>
+              <span className="font-semibold">LinkedIn:</span>{" "}
+              <a
+                href="https://linkedin.com/in/mureed-sajjad/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                /mureed-sajjad
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
